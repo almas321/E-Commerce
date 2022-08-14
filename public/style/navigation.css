@@ -1,0 +1,146 @@
+main{
+    margin-top: 6rem ;
+}
+
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 60rem;
+    height: 5rem;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-primary-500);
+    background-color: var(--color-gray-500);
+  }
+
+  #logo a {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  
+  #main-header nav {
+    display: none;
+  }
+
+/* for mobile */
+
+.nav-items {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+
+  .nav-items li {
+    margin: 0 var(--space-2);
+  }
+  
+  .nav-items button {
+    cursor: pointer;
+    font: inherit;
+    border: 1px solid var(--color-primary-100);
+    border-radius: var(--border-radius-small);
+    background-color: transparent;
+    padding: var(--space-2) var(--space-4);
+  }
+
+
+  #mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: none;
+    cursor: pointer;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  #mobile-menu-btn span {
+    width: 2.25rem;
+    height: 0.2rem;
+    background-color: var(--color-gray-100);
+  }
+/* ------------------------for mobile scree------------------------------- */
+
+#mobile-menu {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    height: calc(100vh - 5rem);
+    width: 100%;
+    background-color: var(--color-gray-700);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+/* please note that there is no white space between mobile menu and open. This kind of selector means that I want to select all elements, which have an ideal of mobile menu. And at the same time, the open class added on them. So the same element must have this ID and the open class. */
+#mobile-menu.open {
+    display: flex;
+  }
+  
+  #mobile-menu nav {
+    height: 20rem;
+    width: 90%;
+    margin: var(--space-4) auto;
+  }
+  
+  #mobile-menu .nav-items a,
+  #mobile-menu .nav-items button {
+    font-size: 1.75rem;
+    color: var(--color-primary-100);
+  }
+
+/* ------------------------for computer scree------------------------------- */
+/* we ensure that only on screens that have this width, the styles that are defined inside this media query will become active. So the rules in there will only become active on large screens. */
+
+
+@media (min-width: 48rem) {
+    main {
+      margin-top: 0;
+    }
+  
+    #main-header {
+      position: static;
+    }
+  
+    #main-header nav {
+      display: block;
+    }
+  
+    .nav-items button {
+      color: var(--color-primary-500);
+      border-color: var(--color-primary-500);
+    }
+    
+    #mobile-menu-btn {
+      display: none;
+    }
+  
+    #mobile-menu {
+      display: none;
+    }
+  
+    .nav-items {
+      flex-direction: row;
+    }
+  
+    .nav-items a {
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--border-radius-small);
+    }
+  
+    .nav-items a:hover,
+    .nav-items a:active {
+      background-color: var(--color-primary-500-bg);
+    }
+  }
